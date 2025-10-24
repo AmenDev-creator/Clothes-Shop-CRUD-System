@@ -99,23 +99,11 @@ Displays the list of products in a table format
 ProductRow.tsx
 Represents a single product row in the table
 
+Barcode Image API: Each new product automatically generates a unique barcode image for quick identification.
 
-🧠 React Concepts Used
-Component-Based Architecture: Each part of the UI is separated into reusable components.
+Barcode Number: A corresponding unique barcode number is also generated for inventory tracking and reference.
 
+Both the barcode image and number are displayed directly in the product table, allowing store owners to manage and scan products efficiently without manual input.
 
-State Management: Using useState to store products, form data, and search terms.
-
-
-Data Flow via Props: Parent component (App) passes data and functions to child components.
-
-
-Rendering Lists: Using .map() to display products in a table.
-
-
-Event Handling: Handling form submission, edit, delete, and search operations.
-
-
-Conditional Rendering: Showing different UI when editing or adding a new product.
 
 
