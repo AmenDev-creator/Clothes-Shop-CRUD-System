@@ -24,7 +24,7 @@ export default function ProductRow({
   onEdit,
   onDelete,
 }: ProductRowProps) {
-  // (Price × NewStock)
+ 
   const totalValue = Number(product.price) * Number(product.newStock);
 
   return (
