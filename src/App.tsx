@@ -8,7 +8,7 @@ export default function App() {
   const [editIndex, setEditIndex] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // 🧠 Add or update product
+  
   const handleCreate = (newProduct: any) => {
     if (editIndex !== null) {
       const updated = [...products];
@@ -20,20 +20,20 @@ export default function App() {
     }
   };
 
-  // ✏️ Edit product
+  
   const handleEdit = (index: number) => {
     const product = products[index];
     setEditIndex(index);
     window.dispatchEvent(new CustomEvent("editProduct", { detail: product }));
   };
 
-  // 🗑️ Delete product
+  
   const handleDelete = (index: number) => {
     const updated = products.filter((_, i) => i !== index);
     setProducts(updated);
   };
 
-  // 🔍 Filter search
+  
   const filteredProducts = products.filter((p) =>
     p.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -48,8 +48,8 @@ export default function App() {
 
       <ProductTable
         products={filteredProducts}
-        onEdit={handleEdit} // ✅ pass function
-        onDelete={handleDelete} // ✅ pass function
+        onEdit={handleEdit} 
+        onDelete={handleDelete} 
       />
     </div>
   );
