@@ -7,19 +7,19 @@ interface ProductFormProps {
 }
 
 export default function ProductForm({ onCreate, editIndex }: ProductFormProps) {
-  // 🧠 Local states
+
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [addedStock, setAddedStock] = useState("");
   const [soldStock, setSoldStock] = useState("");
-  const [size, setSize] = useState(""); // changed setter name to setSize
+  const [size, setSize] = useState(""); 
   const [date, setDate] = useState("") ;
   const [newStock, setNewStock] = useState(0);
   const [barcodeUrl, setBarcodeUrl] = useState("");
   const [barcodeNumber, setBarcodeNumber] = useState("");
 
-  // 🧮 Update new stock when stock values change
+ 
   useEffect(() => {
     const oldQty = Number(quantity) || 0;
     const added = Number(addedStock) || 0;
@@ -37,7 +37,7 @@ export default function ProductForm({ onCreate, editIndex }: ProductFormProps) {
   }
 }, [title]);
 
-  // 🧠 Listen for edit event to prefill the form
+
   useEffect(() => {
     const handleEditEvent = (e: any) => {
       const data = e.detail;
@@ -47,7 +47,7 @@ export default function ProductForm({ onCreate, editIndex }: ProductFormProps) {
       setAddedStock(data.addedStock);
       setSoldStock(data.soldStock);
       setNewStock(data.newStock);
-      setSize(data.size); // use setSize
+      setSize(data.size); 
       setDate(data.date);
     };
 
@@ -55,7 +55,7 @@ export default function ProductForm({ onCreate, editIndex }: ProductFormProps) {
     return () => window.removeEventListener("editProduct", handleEditEvent);
   }, []);
 
-  // 🧾 Add or Update product
+ 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -74,15 +74,15 @@ export default function ProductForm({ onCreate, editIndex }: ProductFormProps) {
         barcodeNumber: generatedNumber,
     };
 
-    onCreate(newProduct); // send data to App
+    onCreate(newProduct); 
 
-    // 🧹 Clear fields after adding/updating
+   
     setTitle("");
     setPrice("");
     setQuantity("");
     setAddedStock("");
     setSoldStock("");
-    setSize(""); // clear size
+    setSize(""); 
     setDate("");
     setNewStock(0);
   };
