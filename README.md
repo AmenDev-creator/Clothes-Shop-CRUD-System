@@ -1,73 +1,121 @@
-# React + TypeScript + Vite
+🧾 Mini Project Documentation — Clothing Store CRUD System
+📌 Project Overview
+This project is a simple CRUD (Create, Read, Update, Delete) system built for managing the inventory of a clothing store.
+ It allows users to:
+Add new clothing products.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Edit existing product details.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+Delete unwanted items.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+Search for specific products.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Automatically calculate total stock and total value using basic arithmetic operations.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The project is built on one single page (no routing) using React, TypeScript, and Tailwind CSS for a clean, modern UI.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+⚙️ Main Features
+Add Products
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+User can input a product name, price, and quantity.
+
+
+When added, it updates the inventory table immediately.
+
+
+Edit Products
+
+
+Clicking “Edit” allows the user to modify product details.
+
+
+Changes update instantly in the table.
+
+
+Delete Products
+
+
+Removes a product from the table with one click.
+
+
+Search Function
+
+
+The search bar filters products by name dynamically.
+
+
+Inventory Arithmetic Logic
+
+
+Uses addition/subtraction for stock management:
+
+
+Adding shipment → increases stock.
+
+
+Selling items → decreases stock.
+
+
+Uses multiplication/addition for total calculations:
+
+
+Total Item Value = Quantity × Price
+
+
+Total Inventory Value = Sum of all item values.
+
+
+
+💻 Technologies Used
+Technology
+Purpose
+React
+For building UI components dynamically
+TypeScript
+Provides static typing and better code safety
+Tailwind CSS
+For responsive, modern, and fast styling
+React Hooks (useState, useEffect)
+For managing component states and side effects
+
+
+🧩 Main Components
+Component
+Description
+Header.tsx
+Displays the app title and branding
+ProductForm.tsx
+Handles adding/editing product details
+SearchBar.tsx
+Allows users to search for products
+ProductTable.tsx
+Displays the list of products in a table format
+ProductRow.tsx
+Represents a single product row in the table
+
+
+🧠 React Concepts Used
+Component-Based Architecture: Each part of the UI is separated into reusable components.
+
+
+State Management: Using useState to store products, form data, and search terms.
+
+
+Data Flow via Props: Parent component (App) passes data and functions to child components.
+
+
+Rendering Lists: Using .map() to display products in a table.
+
+
+Event Handling: Handling form submission, edit, delete, and search operations.
+
+
+Conditional Rendering: Showing different UI when editing or adding a new product.
+
+
